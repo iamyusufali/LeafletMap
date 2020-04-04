@@ -30,10 +30,24 @@
   <div id="mapid"></div>
 
   <script>
-    const map = L.map('mapid').setView([18.7515, 74.139], 7.5);
-    const popup = L.popup().setLatLng([18.7515, 74.139]).setContent('<h3>10,000</h3>').openOn(map);
-    const circle = L.circle([18.7515, 74.139], {radius: 60000}).addTo(map);
+    const map = L.map('mapid').setView([18.7515, 74.139], 6.5);
 
+    const markerOne= L.marker([18.7515, 74.139]).addTo(map);
+    markerOne.bindPopup('<h3>District: 40</h3>').openPopup();
+    L.circle([18.7515, 74.139], {radius: 20000}).setStyle({ color: "#D63031", fillColor: "#D63031"}).addTo(map);
+    
+    const markerTwo= L.marker([17.7515, 73.4]).addTo(map);
+    markerTwo.bindPopup('<h3>District: 25</h3>').openPopup();
+    L.circle([17.7515, 73.4], {radius: 20000}).setStyle({ color: "#D63031", fillColor: "#D63031"}).addTo(map);
+
+    const markerThree= L.marker([16.7515, 73.7]).addTo(map);
+    markerThree.bindPopup('<h3>District: 5</h3>').openPopup();
+    L.circle([16.7515, 73.7], {radius: 20000}).setStyle({ color: "#D63031", fillColor: "#D63031"}).addTo(map);
+    
+    const markerFour= L.marker([19.15, 73.7]).addTo(map);
+    markerFour.bindPopup('<h3>District: 10</h3>').openPopup();
+    L.circle([19.15, 73.7], {radius: 20000}).setStyle({ color: "#D63031", fillColor: "#D63031"}).addTo(map);
+    
     const attribution = '&copy: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributers';
 
     const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
